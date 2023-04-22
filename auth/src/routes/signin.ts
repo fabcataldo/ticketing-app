@@ -4,6 +4,7 @@ import { body } from 'express-validator';
 import { User } from '../models/user';
 import { Password } from '../services/password';
 import jwt from 'jsonwebtoken';
+import { BadRequestError, validateRequest } from '@fcatatickets/common';
 
 
 const router = express.Router();
