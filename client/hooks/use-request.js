@@ -11,6 +11,7 @@ const useRequest = ({url, method, body, onSuccess}) => {
         try {
             const response = await axios[method](url, body);
             if (onSuccess) {
+                setErrors(null);
                 onSuccess(response.data);
             }
             return response.data;
