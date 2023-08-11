@@ -7,9 +7,11 @@ import ErrorMsg from '../components/ErrorMsg';
 const useRequest = ({url, method, body, onSuccess}) => {
     const [errors, setErrors] = useState(null);
 
-    const doRequest = async () => {
+    const doRequest = async (props = {}) => {
         try {
-            const response = await axios[method](url, body);
+            const response = await axios[method](url, 
+                {...body, ...props}    
+            );
             if (onSuccess) {
                 setErrors(null);
                 onSuccess(response.data);
@@ -19,7 +21,7 @@ const useRequest = ({url, method, body, onSuccess}) => {
             setErrors(
                 <div>
                     {
-                        err.response.data.errors.map(err => (
+                        err.response?.data.errors.map(err => (
                             <ErrorMsg message={err.message}></ErrorMsg>
                         ))
                     }
