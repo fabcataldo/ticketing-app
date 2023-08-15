@@ -90,8 +90,8 @@ it('returns a 204 with valid inputs', async() => {
     expect(chargeOptions.amount).toEqual(20 * 100);
     expect(chargeOptions.currency).toEqual('usd');
 
-    console.log('CHARGE OPTIONS')
-    console.log(chargeOptions)
+    // console.log('CHARGE OPTIONS')
+    // console.log(chargeOptions)
 //     const payment = await Payment.findOne({
 //         orderId: order.id,
 //         stripeId: chargeOptions.id
