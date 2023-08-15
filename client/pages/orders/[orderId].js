@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StripeCheckout from 'react-stripe-checkout';
-import useRequest from '../hooks/use-request';
+import useRequest from '../../hooks/use-request';
 import Router from 'next/router';
 
 const OrderShow = ({order, currentUser}) => {
