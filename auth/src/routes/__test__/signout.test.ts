@@ -13,6 +13,5 @@ it('clears the coockie after signing out', async () => {
         .post('/api/users/signout')
         .send({})
         .expect(200)
-    console.log('response: ',response)
     expect(response.get('Set-Cookie')[0]).toEqual('session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; httponly')
 })
